@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: bd_inventario
+    environment:
+      POSTGRES_DB: bd_inventario
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgresql
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
