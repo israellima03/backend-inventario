@@ -1,9 +1,15 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  //configurando el class-validator y class-transformer
+  app.useGlobalPipes(new ValidationPipe());
+
+  
 
   //configuracion de swagger para ver la peticiones en back
   const config = new DocumentBuilder()
