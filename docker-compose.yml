@@ -1,5 +1,5 @@
 services:
-  postgres:
+  db:
     image: postgres:15
     container_name: bd_inventario
     environment:

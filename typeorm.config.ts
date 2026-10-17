@@ -7,6 +7,6 @@ export default new DataSource({
     username: 'postgres',
     password: 'postgresql',
     database: 'bd_inventario',
-    entities:['src/**/.entity.ts'],
+    entities:['src/**/*.entity.ts'],
     migrations:['src/database/migrations/*.ts']
 });
