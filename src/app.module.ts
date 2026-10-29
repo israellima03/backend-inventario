@@ -6,7 +6,9 @@ import { UsersModule } from './modules/users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [ConfigModule.forRoot(),
+  imports: [ConfigModule.forRoot({
+    envFilePath: ['.development.env','.production.env']
+  }),
   TypeOrmModule.forRoot({
     type: 'postgres',
     host: 'localhost',
@@ -15,7 +17,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     password: 'postgresql',
     database: 'bd_inventario',
     entities:[
-      __dirname + '/../**/*entity{.ts,.js}'
+      __dirname + '/**/*entity{.ts,.js}'
     ],
     synchronize: false
 
