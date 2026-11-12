@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { RolesModule } from './modules/admin/roles/roles.module';
 import { PermissionsModule } from './modules/admin/permissions/permissions.module';
 import { InventarioModule } from './modules/admin/inventario/inventario.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
@@ -26,7 +27,7 @@ import { InventarioModule } from './modules/admin/inventario/inventario.module';
 
   }), 
     
-    UsersModule, RolesModule, PermissionsModule, InventarioModule],
+    UsersModule, RolesModule, PermissionsModule, InventarioModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
